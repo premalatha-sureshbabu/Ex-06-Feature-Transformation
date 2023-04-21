@@ -81,9 +81,9 @@ plt.show()
 ## Feature Transformation - Data_to_Transform.csv
 ![11](https://user-images.githubusercontent.com/120620842/233551168-7ac84ca1-ac4c-4c88-8ee1-166324eb52e4.png)
 
-![12](https://user-images.githubusercontent.com/120620842/233551353-00496881-b503-4185-adbe-c0f472272359.png)
+![Screenshot 2023-04-21 112713](https://user-images.githubusercontent.com/120620842/233552096-6a8ed9d5-141d-428d-b649-f424d4c3ba79.png)
 
-![13](https://user-images.githubusercontent.com/120620842/233551390-38c18bfc-1df8-4017-a14b-7cff3fed2f91.png)
+![Screenshot 2023-04-21 112724](https://user-images.githubusercontent.com/120620842/233552164-492de1f9-576d-419f-8d29-61edf61e3ea1.png)
 
 ![14](https://user-images.githubusercontent.com/120620842/233551413-73f9bce1-4204-4fd2-a9ee-216074959824.png)
 
