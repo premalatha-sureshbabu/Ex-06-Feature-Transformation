@@ -93,18 +93,21 @@ plt.show()
 ![16](https://user-images.githubusercontent.com/120620842/233551448-e5c6fec6-14da-41b3-b54c-e842e0430a76.png)
 
 ## Reciprocal Transformation
-![17](https://user-images.githubusercontent.com/120620842/233551487-54ec03d7-8fe7-452a-8474-7d1e0a4f22d7.png)
+![Screenshot 2023-04-21 113056](https://user-images.githubusercontent.com/120620842/233552689-d51143c1-7ae5-459f-bdae-6d1f969d3994.png)
+
 
 ## SquareRoot Transformation
-![18](https://user-images.githubusercontent.com/120620842/233551518-3e2570ad-ddd3-42e1-ac84-022f1930e07f.png)
+![Screenshot 2023-04-21 113109](https://user-images.githubusercontent.com/120620842/233552729-1fe28766-2fc7-4048-b170-94fc019030a6.png)
+
 
 ## Power Transformation
-![19](https://user-images.githubusercontent.com/120620842/233551542-6ecc9a87-6be0-4fd4-b505-c73d2122c818.png)
+![Screenshot 2023-04-21 113125](https://user-images.githubusercontent.com/120620842/233552770-2bef50d8-fca6-4e6c-aa14-aadd8bd0b08b.png)
 
 ![20](https://user-images.githubusercontent.com/120620842/233551567-f5f660f4-e6d2-453e-8007-401d5a1d6b86.png)
 
 ## Quantile Transformation
-![21](https://user-images.githubusercontent.com/120620842/233551609-045b1764-3866-4a3b-97b2-76074337b122.png)
+![Screenshot 2023-04-21 113143](https://user-images.githubusercontent.com/120620842/233552814-138211ee-8109-4e2e-b284-5747c159f4ee.png)
+
 
 # RESULT:
 Thus the Feature Transformation for the given datasets had been executed successfully.
