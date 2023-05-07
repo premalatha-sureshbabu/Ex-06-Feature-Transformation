@@ -27,7 +27,6 @@ Name :S.Prema Latha
 Register Number : 212222230112
 Feature Transformation - Data_to_Transform.csv
 
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -39,74 +38,97 @@ df.head()
 df.isnull().sum()
 df.info()
 df.describe()
+
 df1 = df.copy()
-sm.qqplot(df1.HighlyPositiveSkew,fit=True,line='45')
+sm.qqplot(df1['Highly Positive Skew'],fit=True,line='45')
 plt.show()
-sm.qqplot(df1.HighlyNegativeSkew,fit=True,line='45')
+
+sm.qqplot(df1['Highly Negative Skew'],fit=True,line='45')
 plt.show()
-sm.qqplot(df1.ModeratePositiveSkew,fit=True,line='45')
+
+sm.qqplot(df1['Moderate Positive Skew'],fit=True,line='45')
 plt.show()
-sm.qqplot(df1.ModerateNegativeSkew,fit=True,line='45')
+
+sm.qqplot(df1['Moderate Negative Skew'],fit=True,line='45')
 plt.show()
-df1['HighlyPositiveSkew'] = np.log(df1.HighlyPositiveSkew)
-sm.qqplot(df1.HighlyPositiveSkew,fit=True,line='45')
+
+df1['Highly Positive Skew'] = np.log(df1['Highly Positive Skew'])
+sm.qqplot(df1['Highly Positive Skew'],fit=True,line='45')
 plt.show()
+
 df2 = df.copy()
-df2['HighlyPositiveSkew'] = 1/df2.HighlyPositiveSkew
-sm.qqplot(df2.HighlyPositiveSkew,fit=True,line='45')
+df2['Highly Positive Skew'] = 1/df2['Highly Positive Skew']
+sm.qqplot(df2['Highly Positive Skew'],fit=True,line='45')
 plt.show()
+
 df3 = df.copy()
-df3['HighlyPositiveSkew'] = df3.HighlyPositiveSkew**(1/1.2)
-sm.qqplot(df2.HighlyPositiveSkew,fit=True,line='45')
+df3['Highly Positive Skew'] = df3['Highly Positive Skew']**(1/1.2)
+sm.qqplot(df2['Highly Positive Skew'],fit=True,line='45')
 plt.show()
+
 df4 = df.copy()
-df4['ModeratePositiveSkew_1'],parameters =stats.yeojohnson(df4.ModeratePositiveSkew)
-sm.qqplot(df4.ModeratePositiveSkew_1,fit=True,line='45')
+df4['Moderate Positive Skew_1'],parameters =stats.yeojohnson(df4['Moderate Positive Skew'])
+sm.qqplot(df4['Moderate Positive Skew_1'],fit=True,line='45')
 plt.show()
+
 from sklearn.preprocessing import PowerTransformer 
 trans = PowerTransformer("yeo-johnson")
 df5 = df.copy()
-df5['ModerateNegativeSkew_1'] = pd.DataFrame(trans.fit_transform(df5[['ModerateNegativeSkew']]))
-sm.qqplot(df5['ModerateNegativeSkew_1'],line='45')
+df5['Moderate Negative Skew_1'] = pd.DataFrame(trans.fit_transform(df5[['Moderate Negative Skew']]))
+sm.qqplot(df5['Moderate Negative Skew_1'],line='45')
 plt.show()
+
 from sklearn.preprocessing import QuantileTransformer
 qt = QuantileTransformer(output_distribution = 'normal')
-df5['ModerateNegativeSkew_2'] = pd.DataFrame(qt.fit_transform(df5[['ModerateNegativeSkew']]))
-sm.qqplot(df5['ModerateNegativeSkew_2'],line='45')
+df5['Moderate Negative Skew_2'] = pd.DataFrame(qt.fit_transform(df5[['Moderate Negative Skew']]))
+sm.qqplot(df5['Moderate Negative Skew_2'],line='45')
 plt.show()
 
 ```
 
 # Output
-## Feature Transformation - Data_to_Transform.csv
-![11](https://user-images.githubusercontent.com/120620842/233551168-7ac84ca1-ac4c-4c88-8ee1-166324eb52e4.png)
+## DATA
+![11](https://user-images.githubusercontent.com/120620842/236667477-0e18d722-e945-4c6b-be27-10300a180731.png)
 
-![Screenshot 2023-04-21 112713](https://user-images.githubusercontent.com/120620842/233552096-6a8ed9d5-141d-428d-b649-f424d4c3ba79.png)
+![12](https://user-images.githubusercontent.com/120620842/236667514-95dec1b7-4f3a-4457-a361-d36496323a96.png)
 
-![Screenshot 2023-04-21 112724](https://user-images.githubusercontent.com/120620842/233552164-492de1f9-576d-419f-8d29-61edf61e3ea1.png)
+![13](https://user-images.githubusercontent.com/120620842/236667526-40994bb3-22ba-4782-8c51-494404a1618e.png)
 
-![14](https://user-images.githubusercontent.com/120620842/233551413-73f9bce1-4204-4fd2-a9ee-216074959824.png)
+![14](https://user-images.githubusercontent.com/120620842/236667547-53afcda0-bff3-4075-bf17-027dcb1e201b.png)
 
-![15](https://user-images.githubusercontent.com/120620842/233551432-b808496b-1c15-4595-bee7-d4e55cdb668b.png)
+![15](https://user-images.githubusercontent.com/120620842/236667555-921c9db6-471f-4a31-b8ae-6b29194da49d.png)
+
+## Before Transformation
+
+![16](https://user-images.githubusercontent.com/120620842/236667590-d8404af4-80b2-405f-bafe-897ecacafaf0.png)
+
+![17](https://user-images.githubusercontent.com/120620842/236667602-f207cf2c-d51b-4629-90ea-8b06b1febd81.png)
+
+![18](https://user-images.githubusercontent.com/120620842/236667610-a91a8ce4-8bd1-46f8-a92d-73de1b396ddb.png)
+
+![19](https://user-images.githubusercontent.com/120620842/236667623-807d366f-df04-4516-9865-c495c4c3cb16.png)
 
 ## Log Transformation
-![16](https://user-images.githubusercontent.com/120620842/233551448-e5c6fec6-14da-41b3-b54c-e842e0430a76.png)
+
+![20](https://user-images.githubusercontent.com/120620842/236667667-4689f5dd-31f3-4df9-b5f2-c7eb4d508c3e.png)
 
 ## Reciprocal Transformation
-![Screenshot 2023-04-21 113056](https://user-images.githubusercontent.com/120620842/233552689-d51143c1-7ae5-459f-bdae-6d1f969d3994.png)
 
+![21](https://user-images.githubusercontent.com/120620842/236667687-109d4d2e-7a61-4d95-ada3-55e7914f3aab.png)
 
-## SquareRoot Transformation
-![Screenshot 2023-04-21 113109](https://user-images.githubusercontent.com/120620842/233552729-1fe28766-2fc7-4048-b170-94fc019030a6.png)
+## Square root Transformation
 
+![22](https://user-images.githubusercontent.com/120620842/236667710-79b95ea5-8d70-421d-9acd-93f6b34e7493.png)
+
+![23](https://user-images.githubusercontent.com/120620842/236667724-5b5efec4-0aa2-4643-b7fe-c92e4393a2b3.png)
 
 ## Power Transformation
-![Screenshot 2023-04-21 113125](https://user-images.githubusercontent.com/120620842/233552770-2bef50d8-fca6-4e6c-aa14-aadd8bd0b08b.png)
 
-![20](https://user-images.githubusercontent.com/120620842/233551567-f5f660f4-e6d2-453e-8007-401d5a1d6b86.png)
+![24](https://user-images.githubusercontent.com/120620842/236667747-71b82bfd-f08f-4c00-821a-7a8480b4dcb7.png)
 
 ## Quantile Transformation
-![Screenshot 2023-04-21 113143](https://user-images.githubusercontent.com/120620842/233552814-138211ee-8109-4e2e-b284-5747c159f4ee.png)
+
+![25](https://user-images.githubusercontent.com/120620842/236667764-95d9490e-a306-4700-a441-1120fd0b90fb.png)
 
 
 # RESULT:
